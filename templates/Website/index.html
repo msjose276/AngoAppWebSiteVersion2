@@ -1,0 +1,21 @@
+{% extends 'masters/master.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+ {% comment %}   {% include 'snippets/snip_main_slider.html' %}{% endcomment %}
+
+    {% include 'snippets/snip_main_cover.html' %}
+
+
+    {% include 'snippets/snip_services.html' %}
+
+    {% include 'snippets/snip_testimonials.html' %}
+
+    {% include 'snippets/snip_technology.html' %}
+
+    {% comment %}{% include 'snippets/snip_about_us.html' %}
+
+    {% include 'Website/process.html' %}{% endcomment %}
+
+{% endblock %}

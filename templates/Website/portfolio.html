@@ -1,0 +1,29 @@
+{% extends 'masters/master.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+{% if projects %}
+{#  ********************************** portfolio **************************************#}
+
+    <div class="container mt-5 text-center justify-content-center">
+        <div  class="row">
+            {#  ********************** title**********************#}
+            <div class="col-md-12 section-heading text-center m-5">
+                    <h2 class="mt-5">Portfolio</h2>
+            </div>
+
+            {#  ***************************************************#}
+            {% for project in projects %}
+                <div class="col-md-2 col-sm-2 col-xs-2 col-xxs-2 justify-content-center mb-5" >
+                    <img class="col-md-12 col-sm-12 col-xs-12 col-xxs-12" src="{{ project.photo.url }}" />
+                    <p>{{ project.name }}</p>
+                    <p>{{ project.date }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+{#  ************************************************************************#}
+
+{% endblock %}

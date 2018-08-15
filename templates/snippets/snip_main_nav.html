@@ -1,0 +1,27 @@
+{% load static from staticfiles %}
+
+<div class="bg-light sticky-top">
+<div class="container  ">
+    <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-light bg-transparent">
+      <a class="navbar-brand" href="{% url 'homepage' %}">
+          <img src="{% static 'img/logo.png' %}" style="width: 150px; height: 50px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-end">
+          <li class="nav-item active">
+            <a class="nav-link font-weight-bold" href="/">Paginal inicial <span class="sr-only">(current)</span></a>
+          </li>
+
+            <li class="nav-item font-weight-bold"><a class="nav-link" href="{% url 'about' %}">sobre nós</a></li>
+            <li class="nav-item font-weight-bold"><a class="nav-link" href="{% url 'process' %}">Processo</a></li>
+            <li class="nav-item font-weight-bold"><a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a></li>
+        </ul>
+      </div>
+    </nav>
+
+</div>
+</div>

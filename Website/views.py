@@ -5,6 +5,8 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import Partner
 from .models import Person
+from .models import Project
+from .models import Photo
 
 
 
@@ -44,8 +46,24 @@ def process(request):
     return HttpResponse(template.render(context, request))
 
 def portfolio(request):
+    projects = Project.objects.order_by('title')
 
     template = loader.get_template('Website/portfolio.html')
     context = {
+        'projects' : projects,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def project_detail(request, keyword):
+    project = Project.objects.get(title=keyword)
+    photos = Photo.objects.filter(projectName=project.id)
+
+    #projects = Project.objects.order_by('title')
+
+    template = loader.get_template('Website/portfolio.html')
+    context = {
+        'project' : project,
+        'photos':photos,
     }
     return HttpResponse(template.render(context, request))

@@ -4,7 +4,6 @@
 {% block content %}
 {% if projects %}
 {#  ********************************** portfolio **************************************#}
-
     <div class="container mt-5 text-center justify-content-center">
         <div  class="row">
             {#  ********************** title**********************#}
@@ -14,16 +13,34 @@
 
             {#  ***************************************************#}
             {% for project in projects %}
-                <div class="col-md-2 col-sm-2 col-xs-2 col-xxs-2 justify-content-center mb-5" >
-                    <img class="col-md-12 col-sm-12 col-xs-12 col-xxs-12" src="{{ project.photo.url }}" />
-                    <p>{{ project.name }}</p>
-                    <p>{{ project.date }}</p>
+                <div class="col-md-4 col-sm-4 col-xs-4 col-xxs-4 justify-content-center mb-5" >
+                    <a href="{% url 'project_detail' keyword=project.title %}  ">
+                        <img class="col-md-12 col-sm-12 col-xs-12 col-xxs-12" src="{{ project.artwork.url }}" />
+                        <p>{{ project.title }}</p>
+                        <p>{{ project.publishedDate }}</p>
+                    </a>
                 </div>
             {% endfor %}
         </div>
     </div>
 {% endif %}
 
-{#  ************************************************************************#}
+    {% if photos %}
+    {#  ************************************************************************#}
+    {#  ********************************** Project detail porfolio **************************************#}
+        <div class="container">
+            <div class="row">
+                <h2 class="col-md-12 col-sm-12 col-xs-12 col-xxs-12 text-center font-weight-bold m-5">{{ project.title }}</h2>
+                <p class="col-md-12 col-sm-12 col-xs-12 col-xxs-12">{{ project.description }}</p>
+                <p class="col-md-12 col-sm-12 col-xs-12 col-xxs-12 font-weight-bold mb-5"> data de publicacao: {{ project.publishedDate }}</p>
+                {% for singlephoto in photos %}
+                    <div class="col-md-4 col-sm-4 col-xs-4 col-xxs-4 justify-content-center mb-5" >
+                        <img class="col-md-12 col-sm-12 col-xs-12 col-xxs-12" src="{{ singlephoto.photo.url }}" />
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
 
 {% endblock %}

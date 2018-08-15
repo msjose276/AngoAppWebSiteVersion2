@@ -11,4 +11,6 @@ urlpatterns = [
     path('services', views.services, name='services'),
     path('process', views.process, name='process'),
     path('portfolio', views.portfolio, name='portfolio'),
+    path('<str:keyword>/', views.project_detail, name='project_detail'),
+
 ]

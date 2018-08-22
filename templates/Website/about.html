@@ -2,44 +2,60 @@
 {% load static from staticfiles %}
 
 {% block content %}
+    {% include 'snippets/nav_bar_new.html' %}
+
     {% include 'snippets/snip_about_us.html' %}
 
+    <div class="">
 
-    <div class="container">
 
-        <div class="row justify-content-center">
 
-            {#************************************ print partners ************************************************#}
-            {% if people %}
-                <div class="col-md-12 text-center m-5">
-                    <h1>Nossos parceiros</h1>
-                </div>
-            {% endif %}
-            {% for partner in partners %}
-                <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
-                    <img class="p-0 img-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12" src="{{ partner.image.url }}"  style="width: 100%;object-fit: cover;">
-                    <p>{{ partner.name }}</p>
-                </div>
-            {% endfor %}
 
             {#************************************ print people ************************************************#}
-            {% if people %}
-                <div class="col-md-12 text-center m-5">
-                    <h1>Quem Somos</h1>
+            <div class="bg-plain-light pb-5">
+                <div class="container">
+                    <div class="row justify-content-center" >
+
+                        {% if people %}
+                            <div class="col-md-12 text-center m-5">
+                                <h1>Quem Somos</h1>
+                            </div>
+                        {% endif %}
+                        {% for person in people %}
+                            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 ">
+                                <img class="p-0 img-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12" src="{{ person.photo.url }}"  style="width: 100%;object-fit: cover;">
+                                <h5 class="pt-3 text-color-darkblue">{{ person.role }}</h5>
+                                <h2  class="">{{ person.name }}</h2>
+                                <h6 class="">{{ person.email }}</h6>
+                                <p >{{ person.bio }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
-            {% endif %}
-            {% for person in people %}
-                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                    <img class="p-0 img-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12" src="{{ person.photo.url }}"  style="width: 100%;object-fit: cover;">
-                    <p>{{ person.role }}</p>
-                    <p>{{ person.name }}</p>
-                    <p>{{ person.email }}</p>
-                    <p>{{ person.bio }}</p>
-                </div>
-            {% endfor %}
+            </div>
             {#************************************ print people ************************************************#}
 
+
+        {#************************************ print partners ************************************************#}
+        <div class="bg-white py-5 mb-5">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                    {% if people %}
+                        <div class="col-md-12 text-center m-5">
+                            <h1>Nossos parceiros</h1>
+                        </div>
+                    {% endif %}
+                    {% for partner in partners %}
+                        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                            <img class="p-0 img-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12" src="{{ partner.image.url }}"  style="width: 100%;object-fit: cover;">
+                            <h5>{{ partner.name }}</h5>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
+
+
 
     </div>
 

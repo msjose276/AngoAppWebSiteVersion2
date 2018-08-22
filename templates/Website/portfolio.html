@@ -2,24 +2,30 @@
 {% load static from staticfiles %}
 
 {% block content %}
+    {% include 'snippets/nav_bar_new.html' %}
+
+
 {% if projects %}
 {#  ********************************** portfolio **************************************#}
-    <div class="container mt-5 text-center justify-content-center">
+
+    <div class="container my-5 text-center justify-content-center">
         <div  class="row">
             {#  ********************** title**********************#}
             <div class="col-md-12 section-heading text-center m-5">
-                    <h2 class="mt-5">Portfolio</h2>
+                    <h1 class="mt-5">Portfolio</h1>
             </div>
 
             {#  ***************************************************#}
             {% for project in projects %}
-                <div class="col-md-4 col-sm-4 col-xs-4 col-xxs-4 justify-content-center mb-5" >
+                <div class="single-post col-md-4 col-sm-4 col-xs-4 col-xxs-4 justify-content-center mx-2 p-2" >
                     <a href="{% url 'project_detail' keyword=project.title %}  ">
-                        <img class="col-md-12 col-sm-12 col-xs-12 col-xxs-12" src="{{ project.artwork.url }}" />
-                        <p>{{ project.title }}</p>
-                        <p>{{ project.publishedDate }}</p>
+                        <img class="col-md-12 col-sm-12 col-xs-12 col-xxs-12 " src="{{ project.artwork.url }}" />
                     </a>
+                    <h1 class="mt-2 text-color-darkblue">{{ project.title }}</h1>
+                    <p class=""><i class="fa fa-calendar p-0"></i>{{ project.publishedDate }}</p>
+
                 </div>
+
             {% endfor %}
         </div>
     </div>

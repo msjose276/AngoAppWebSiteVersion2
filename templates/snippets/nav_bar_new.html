@@ -1,0 +1,30 @@
+{% load static from staticfiles %}
+
+
+{% comment %}
+best options: #95A3A4,9BA2AB,A4B8C4,66717E,6CA6C1,6E8387
+{% endcomment %}
+        <header class="header" style="background-color: #A4B8C4">
+			<div class="container">
+				<div class="row flexbox-center">
+					<div class="col-lg-2 col-md-3 col-6">
+						<div class="logo">
+							<a href="/"><img class="" src="{% static 'img/logo.png' %}" alt="logo" style="width: 100px"/></a>
+						</div>
+					</div>
+					<div class="col-lg-10 col-md-9 col-6">
+						<div class="responsive-menu"></div>
+					    <div class="mainmenu">
+                            <ul id="primary-menu">
+                                <li><a class="nav-link active " href="/">Paginal inicial</a></li>
+                                <li><a class="nav-link" href="{% url 'about' %}">sobre nós</a></li>
+                                <li><a class="nav-link " href="{% url 'process' %}">Processo</a></li>
+                                <li><a class="nav-link " href="{% url 'portfolio' %}">Portfolio</a></li>
+                            </ul>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</header><!-- header section end -->
+
+

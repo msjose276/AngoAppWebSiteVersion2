@@ -1,3 +1,183 @@
+
+.header.sticky .mainmenu li a.appao-btn ,
+.mainmenu li a.appao-btn,
+.appao-btn {
+    border: 1px solid #fff;
+    color: #fff;
+	border-radius: 15px;
+    padding: 6px 25px;
+    display: inline-block;
+    text-transform: uppercase;
+	cursor: pointer;
+	font-weight: 500;
+}
+.header.sticky .mainmenu li a.appao-btn:hover ,
+.mainmenu li a.appao-btn:hover,
+.appao-btn:hover {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #666;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+	transition: all 0.4s;
+    width: 100%;
+    z-index: 99;
+	padding: 18px 0;
+}
+
+.header.sticky {
+	border-bottom: 1px solid #fff;
+	background: #000529; /* Old browsers */
+	background: -moz-linear-gradient(left, #000529 1%, #002055 24%, #005db5 67%, #0074d9 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #000529 1%,#002055 24%,#005db5 67%,#0074d9 100%);
+}
+.header.sticky {
+	padding: 10px 0;
+}
+
+.responsive-menu,
+	.slicknav_menu {
+		display: block;
+	}
+
+.mainmenu {
+    text-align: right;
+}
+.mainmenu li {
+    display: inline-block;
+    text-transform: uppercase;
+}
+.mainmenu li a {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    padding: 5px 16px;
+	margin: 0 3px;
+    border: 1px solid transparent;
+}
+.slicknav_menu {
+	padding: 0;
+    background: transparent;
+}
+.slicknav_menu a.active,
+.mainmenu ul li a:hover,
+.mainmenu ul li a.active {
+    border: 1px solid #fff;
+}
+.mainmenu {
+    display: block;
+}
+
+
+.mainmenu li a.appao-btn {
+	margin-left: 55px;
+}
+
+
+
+.hero-area-content {
+    color: #fff;
+	padding: 80px 0 170px;
+}
+.hero-area-content h1 {
+    color: #fff;
+}
+.hero-area-content p {
+    margin: 28px 0 25px;
+}
+.hero-area-content .appao-btn {
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.hero-area.breadcrumb-area .hero-area-content {
+    padding: 0;
+}
+
+.hero-area {
+    padding-top: 140px;
+	z-index: 1;
+	position: relative;
+
+    background-repeat: no-repeat;
+    background-position: center;
+	background-attachment: fixed;
+    background-size: cover;
+	overflow: hidden;
+}
+.hero-area::before {
+	content: "";
+	top: 0;
+	left: 0;
+    opacity: 0.80;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	position: absolute;
+	background: #2E4057; /* Old browsers */
+	background: -moz-linear-gradient(left, #000529 1%, #000529 24%, #000529 67%, #083D77 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #000529 1%,#000529 24%,#000529 67%,#083D77 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #000529 1%,#000529 24%,#000529 67%,#083D77 100%);
+
+}
+/*
+.hero-area::before {
+	content: "";
+	top: 0;
+	left: 0;
+    opacity: 0.35;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	position: absolute;
+	background: #2C4251; !* Old browsers *!
+	background: -moz-linear-gradient(left, #2C4251 1%, #2C4251 24%, #2C4251 67%, #2C4251 100%); !* FF3.6-15 *!
+	background: -webkit-linear-gradient(left, #2C4251 1%,#2C4251 24%,#2C4251 67%,#2C4251 100%); !* Chrome10-25,Safari5.1-6 *!
+	background: linear-gradient(to right, #2C4251 1%,#2C4251 24%,#2C4251 67%,#2C4251 100%);
+}*/
+.hero-area-content {
+    color: #fff;
+	padding: 80px 0 170px;
+}
+.hero-area-content h1 {
+    color: #fff;
+}
+.hero-area-content p {
+    margin: 28px 0 25px;
+}
+.hero-area-content .appao-btn {
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+
+.single-post {
+    box-shadow: 0 2px 10px -2px #999;
+}
+
+.single-post:hover img {
+    transform: scale(1.05);
+}
+
+
+
+
+
+.bg-darkblue{
+    background-color: #005db5;
+}
+.bg-plain-light{
+    background-color: #eee;
+}
+
+.blackkkk{
+    background-color: #FF0000;
+}
 .transbox {
   margin: 0px;
   background-color: #FF0000;
@@ -10,7 +190,12 @@
 .brightness {
     -webkit-filter: brightness(0.10);
     filter: brightness(0.20);
+    color: #449d44;
+
+
 }
+
+
 /*************************/
 .font-bold{
     font-weight: bold;

@@ -25,6 +25,15 @@ SECRET_KEY = 'co8@q0og+bjl=#g%hgw4oy%y(_w=w4_2&cu-lt3)z)jo!=(311'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# email configuration
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'angoapp2016@gmail.com'
+EMAIL_HOST_PASSWORD = '1%appFORTESapp++'
+EMAIL_PORT = 587
+
+
+
 ALLOWED_HOSTS = []
 
 

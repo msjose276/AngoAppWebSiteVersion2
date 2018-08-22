@@ -1,0 +1,20 @@
+{% extends 'masters/master.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+    {% include 'snippets/nav_bar_new.html' %}
+
+
+{% if error %}
+    <div class="container">
+        <div class="row">
+            <h1>{{ error }}</h1>
+            <p>mateus</p>
+        </div>
+    </div>
+    <p>ssssss</p>
+{% endif %}
+
+
+
+{% endblock %}

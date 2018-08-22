@@ -3,6 +3,7 @@
 from django.urls import path
 
 from . import views
+from django.conf.urls import handler404
 
 urlpatterns = [
 
@@ -14,3 +15,5 @@ urlpatterns = [
     path('<str:keyword>/', views.project_detail, name='project_detail'),
 
 ]
+
+#handler404 = views.error404

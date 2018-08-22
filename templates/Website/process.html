@@ -71,11 +71,16 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 </div>
 </div>
 
+
+
+
     <div class="container my-5">
 
         <h1 class="col-md-12 text-center m-5">Entre em Contacto Connosco</h1>
         <form method="post" class="navbar-form navbar-left row " role="search" >{% csrf_token %}
-
+            {% if message_sent %}
+                <h4 style="background-color: #2aabd2"> {{ message_sent }}</h4>
+            {% endif %}
             <div class="form-group item col-md-6 col-sm-6 col-xs-6 col-xxs-6">
                 <p class="col-md-6 col-sm-6 col-xs-6 col-xxs-6">Primeiro Nome </p><input type="text" class="form-control " placeholder="primeiro nome" name="first_name" required>
             </div>

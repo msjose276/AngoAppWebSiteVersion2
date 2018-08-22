@@ -19,9 +19,18 @@ from django.urls import include, path
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
+from Website import views
+from django.conf.urls import (
+handler400, handler403, handler404, handler500
+)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Website.urls')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# handler404 = 'Website.views.handler404'
+# handler404 = 'my_app.views.page_not_found'
+handler404 = 'Website.views.handler404'
